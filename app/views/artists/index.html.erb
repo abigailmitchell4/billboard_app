@@ -1,0 +1,23 @@
+ <h1 class="ui header">Artists</h1>
+ <hr/>
+ <% @artists.each do |artist| %>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="ui card"> 
+        <div class="content">
+          <%= link_to artist.name, artist, class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Edit', edit_artist_path(artist) %>
+            </div>
+            <div class="ui basic red button">
+              <%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  <% end %>
+</div>

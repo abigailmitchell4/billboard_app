@@ -1,0 +1,13 @@
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @artist.name %>
+    </p>
+  </div>
+  <div class="extra content">
+    <%=link_to 'View Songs', artist_songs_path(@artist) %>
+    <br/>
+    <%= link_to 'Edit', edit_artist_path(@artist) %> |
+    <%= link_to 'Back', artists_path %>
+  </div>
+</div>
