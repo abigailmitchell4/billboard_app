@@ -1,8 +1,13 @@
  <h1 class="ui header">Artists</h1>
  <hr/>
+
+<div class="ui grid">
  <% @artists.each do |artist| %>
     <div class="sixteen wide mobile eight wide tablet four wide computer column">
       <div class="ui card"> 
+        <div class="image">
+          <img src="https://robohash.org/<%= artist.avatar %>?set=set2" />
+        </div>
         <div class="content">
           <%= link_to artist.name, artist, class: "header" %>
         </div>

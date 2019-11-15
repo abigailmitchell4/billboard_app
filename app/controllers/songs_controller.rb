@@ -14,12 +14,10 @@ class SongsController < ApplicationController
   def new
     #GET	/artists/:artist_id/songs/new
     @song = @artist.songs.new 
-    render partial: "form"
   end
 
   def edit
     #GET	/artists/:artist_id/songs/:id/edit
-    render partial: "form"
   end
 
   def create
@@ -57,8 +55,9 @@ private
     @artist = Artist.find(params[:artist_id])
   end
 
+
   def song_params
-    params.require(:song).permit(:title, :artist, :album, :rating, :country)
+    params.require(:song).permit(:title, :artist_name, :album, :rating, :country)
   end
 
 end

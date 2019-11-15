@@ -1,12 +1,20 @@
-<h1><%= @song.title %></h1>
-<p><%= @song.artist %></p>
-<p><%= @song.album %></p>
-<p><%= @song.rating %></p>
-<p><%= @song.country %></p>
-<hr/>
-<% end %>
-
+<div>
+  <h1><%= @song.title %></h1>
+  <p><%= @song.artist_name %></p>
+  <p><%= @song.album%></p>
+  <p><%=@song.rating%></p>
+  <p><%=@song.country%></p>
+  <p><%=@artist.avatar%></p>
+  <br/>
+  <%# <h2>Comments</h2> %>
+</div>
 <hr />
-<%= link_to 'Edit Song', edit_artist_song_path([@artist, @song]) %>
-<%= link_to 'Delete Song', [@artist, @song], method: :delete %>
-<%= link_to 'Back To All Songs', artist_songs_path%>
+
+<div>
+  <%= link_to 'Edit song', edit_artist_song_path([@artist, @song]) %>
+  <br/>
+  <%= link_to 'Delete song', [@artist, @song], method: :delete %>
+  <br/>
+  <%= link_to 'Back To All songs', artist_songs_path%>
+  <br/>
+</div>
