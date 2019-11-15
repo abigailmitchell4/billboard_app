@@ -1,0 +1,26 @@
+ <h1 class="ui header">billboards</h1>
+  <%= link_to "New billboard", new_billboard_path %>
+ <hr/>
+
+<div class="ui grid">
+ <% @billboards.each do |billboard| %>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="ui card"> 
+         <%# maybe image here %>
+        <div class="content">
+          <%= link_to billboard.name, billboard, class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Edit', edit_billboard_path(billboard) %>
+            </div>
+            <div class="ui basic red button">
+              <%= link_to 'Destroy', billboard, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

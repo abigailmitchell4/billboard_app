@@ -1,12 +1,14 @@
  <h1 class="ui header">Artists</h1>
+  <%= link_to "New Artist", new_artist_path %>
+  <%= link_to "Billboards", billboards_path %>
  <hr/>
 
 <div class="ui grid">
  <% @artists.each do |artist| %>
     <div class="sixteen wide mobile eight wide tablet four wide computer column">
       <div class="ui card"> 
-        <div class="image">
-          <img src="https://robohash.org/<%= artist.avatar %>?set=set2" />
+         <div class="image">
+          <img src="https://robohash.org/<%= artist.avatar %>?set=set4" />
         </div>
         <div class="content">
           <%= link_to artist.name, artist, class: "header" %>
@@ -22,7 +24,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div></div>
+      </div>
   <% end %>
 </div>
