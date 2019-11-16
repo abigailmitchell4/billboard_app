@@ -1,12 +1,31 @@
 <div class="ui card">
-  <%# maybe image here %>
+  <%#maybe image here %>
   <div class="content">
     <p class="header">
       <%= @billboard.name %>
     </p>
+    <p>
+      <% @songs.each do |song| %>
+        <%= song.title %>
+         <div class="card-action">
+            <%= link_to 'Go To Song', artist_song_path(song.artist, song) %>
+            <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete %>
+          </div>
+      <% end %>
+    </p>
+  </div> 
+  <div class="card-action"> 
+    <%= link_to 'New Song', new_billboard_song_path(@billboard) %>
+    <br/>
+    <%# <%= link_to 'Delete song', [@artist, @song], method: :delete %> 
+    <br/>
   </div>
+
+  <br/>
+
+
   <div class="extra content">
-    <%=link_to 'View Songs', billboard_songs_path(@billboard) %>
+    <%# <%= link_to 'Songs', billboard_songs_test_path(@billboard)%> 
     <br/>
     <%= link_to 'Edit', edit_billboard_path(@billboard) %> |
     <%= link_to 'Back', billboards_path %>

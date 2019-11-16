@@ -1,23 +1,39 @@
- <h1 class="ui header">billboards</h1>
-  <%= link_to "New billboard", new_billboard_path %>
- <hr/>
+<div class="ui center aligned header">
+<br/>
+  <h1 class="ui huge header">B I L L B O A R D S</h1>
+</div>
+<br/>
+<div class="ui center aligned header">
+  <button class="ui mini pink button">
+    <%= link_to "New billboard", new_billboard_path, class: "ui pink button" %>
+  </button>
+</div>
+
+<br/>
+<hr/>
+<br/>
 
 <div class="ui grid">
  <% @billboards.each do |billboard| %>
     <div class="sixteen wide mobile eight wide tablet four wide computer column">
       <div class="ui card"> 
-         <%# maybe image here %>
-        <div class="content">
-          <%= link_to billboard.name, billboard, class: "header" %>
+        <div class="ui inverted segment"> 
+          <div class="content">
+            <div class="ui inverted segment"> 
+              <div class="ui center aligned header">
+                <%= link_to billboard.name, billboard, class: "ui white inverted header" %>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="extra content">
-          <div class="ui two buttons">
-            <div class="ui basic green button">
-              <%= link_to 'Edit', edit_billboard_path(billboard) %>
-            </div>
-            <div class="ui basic red button">
-              <%= link_to 'Destroy', billboard, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
+        <div class="content">
+          <div class="ui small vertical two buttons">
+            <button class="ui basic button">
+              <%= link_to 'Edit', edit_billboard_path(billboard), class: "ui inverted violet button" %>
+            </button>
+            <button class="ui basic button">
+              <%= link_to 'Delete', billboard, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui inverted purple button" %>
+            </button>
           </div>
         </div>
       </div>

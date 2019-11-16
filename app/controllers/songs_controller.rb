@@ -1,12 +1,13 @@
 class SongsController < ApplicationController
   before_action :set_artist
-  # before_action :set_billboard
+  
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
     #GET - /artists/:artist_id/songs
     @songs = @artist.songs
   end
+
 
   def show
     #GET - /artists/:artist_id/songs/:id
@@ -49,24 +50,20 @@ class SongsController < ApplicationController
 private
 
   def set_song
-    if @song.include?(@song.artist_id )
-      @song = Song.find(params[:id])
-    else
-      set_billboard
-    end
+    @song = Song.find(params[:id])
   end
 
   def set_artist
     @artist = Artist.find(params[:artist_id])
   end
   
-  def set_billboard
-    @billboard = Billboard.find(params[:billboard_id])
-  end
+  # def set_billboard
+  #    @billboard = Billboard.find(params[:billboard_id])
+  # end
 
 
   def song_params
-    params.require(:song).permit(:title, :artist_name, :album, :rating, :country, :billboard_id)
+    params.require(:song).permit(:title, :artist_name, :album, :rating, :country)
   end
 
 end

@@ -1,29 +1,48 @@
- <h1 class="ui header">Artists</h1>
-  <%= link_to "New Artist", new_artist_path %>
-  <%= link_to "Billboards", billboards_path %>
- <hr/>
+<div class="ui center aligned header">
+<br/>
+  <h1 class="ui huge header">A R T I S T S</h1>
+</div>
+
+<div class="ui center aligned header">
+  <h1 class="ui medium header">Choose an Artist Below</p>
+</div>
+
+<br/>
+<div class="ui center aligned header">
+  <button class="ui mini pink button">
+    <%= link_to "Add a New Artist", new_artist_path, class: "ui pink button" %>
+  </button>
+</div>
+  
+<br/>
+<hr/>
+<br/>
 
 <div class="ui grid">
- <% @artists.each do |artist| %>
-    <div class="sixteen wide mobile eight wide tablet four wide computer column">
-      <div class="ui card"> 
-         <div class="image">
-          <img src="https://robohash.org/<%= artist.avatar %>?set=set4" />
-        </div>
+  <% @artists.each do |artist| %>
+  <div class="sixteen wide mobile eight wide tablet four wide computer column">
+    <div class="ui card"> 
+      <div class="ui inverted segment"> 
         <div class="content">
-          <%= link_to artist.name, artist, class: "header" %>
-        </div>
-        <div class="extra content">
-          <div class="ui two buttons">
-            <div class="ui basic green button">
-              <%= link_to 'Edit', edit_artist_path(artist) %>
-            </div>
-            <div class="ui basic red button">
-              <%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class="ui inverted segment"> 
+            <div class="ui center aligned header">
+              <%= link_to artist.name, artist, class: "ui white inverted header" %>
             </div>
           </div>
         </div>
       </div>
+      <div class="content">
+        <div class="ui small vertical two buttons">
+          <button class="ui basic button">
+            <%= link_to 'Edit', edit_artist_path(artist), class: "ui inverted violet button"%>
+          </button>
+          <button class="ui basic button">
+            <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui inverted purple button" %>
+          </button>
+        </div>
       </div>
-  <% end %>
+    </div>
+  </div>
+
+<% end %>
 </div>

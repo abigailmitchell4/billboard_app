@@ -1,16 +1,28 @@
-<div class="ui card">
-  <div class="image">
-    <img src="https://robohash.org/<%= @artist.avatar %>?set=set4" />
-  </div>
+<div class="ui center aligned header">
+<br/>
+  <h1 class="ui medium header">You Chose: </h1>
+  <br/>
+  <h1 class="ui huge purple header">
+  <%= @artist.name %></h1>
+<br/>
+</div>
+
+<div class="ui center aligned segment">
+  
   <div class="content">
-    <p class="header">
-      <%= @artist.name %>
-    </p>
-  </div>
-  <div class="extra content">
-    <%=link_to 'View Songs', artist_songs_path(@artist) %>
+    <div class="ui center aligned header">
+    <div class="ui two buttons">
+    <button class="ui basic button">
+    <%=link_to 'View Songs', artist_songs_path(@artist), class: "ui inverted violet button" %>
+    </button>
+    </div>
     <br/>
-    <%= link_to 'Edit', edit_artist_path(@artist) %> |
+    <div class="ui fluid buttons">
+   <button calss="ui basic button">
+    <%= link_to 'Edit', edit_artist_path(@artist) %>
     <%= link_to 'Back', artists_path %>
+    </button>
+    </div>
+  </div>
   </div>
 </div>
