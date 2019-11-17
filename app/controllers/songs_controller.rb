@@ -5,21 +5,18 @@ class SongsController < ApplicationController
 
   def index
     #GET - /artists/:artist_id/songs
-    @songs = @artist.songs
+    @songs = @artist.songs.all
   end
 
 
   def show
-    #GET - /artists/:artist_id/songs/:id
   end
 
   def new
-    #GET	/artists/:artist_id/songs/new
     @song = @artist.songs.new 
   end
 
   def edit
-    #GET	/artists/:artist_id/songs/:id/edit
   end
 
   def create
@@ -35,7 +32,7 @@ class SongsController < ApplicationController
   def update
     #PUT	/artists/:artist_id/songs/:id
     if @song.update(song_params)
-      redirect_to artist_song_path(@artist)
+      redirect_to artist_song_path(@artist, @song)
     else
       render :edit
     end
@@ -49,6 +46,10 @@ class SongsController < ApplicationController
 
 private
 
+  def song_params
+    params.require(:song).permit(:title, :artist_name, :album, :rating, :country)
+  end
+
   def set_song
     @song = Song.find(params[:id])
   end
@@ -60,10 +61,5 @@ private
   # def set_billboard
   #    @billboard = Billboard.find(params[:billboard_id])
   # end
-
-
-  def song_params
-    params.require(:song).permit(:title, :artist_name, :album, :rating, :country)
-  end
 
 end
