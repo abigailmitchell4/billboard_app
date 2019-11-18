@@ -19,8 +19,15 @@ class SongsController < ApplicationController
   def edit
   end
 
+  def update
+    if @song.update(song_params)
+      redirect_to artist_song_path(@artist, @song)
+    else
+      render :edit
+    end
+  end
+
   def create
-    #POST	/artists/:artist_id/songs
     @song = @artist.songs.new(song_params)
     if @song.save
       redirect_to artist_song_path(@artist, @song) #need to reference both these ids for this path
@@ -29,17 +36,8 @@ class SongsController < ApplicationController
     end
   end
 
-  def update
-    #PUT	/artists/:artist_id/songs/:id
-    if @song.update(song_params)
-      redirect_to artist_song_path(@artist, @song)
-    else
-      render :edit
-    end
-  end
 
   def destroy
-    #DELETE	/artists/:artist_id/songs/:id
     @song.destroy
     redirect_to artist_songs_path(@artist)
   end
@@ -58,8 +56,5 @@ private
     @artist = Artist.find(params[:artist_id])
   end
   
-  # def set_billboard
-  #    @billboard = Billboard.find(params[:billboard_id])
-  # end
 
 end

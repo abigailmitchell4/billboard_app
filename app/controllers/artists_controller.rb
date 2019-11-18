@@ -12,11 +12,19 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
 
+  def update 
+    if @artist.update(artist_params)
+      redirect_to artist_path
+    else 
+      render :edit
+    end
+  end
+
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
       # redirect_to artist_path(@artist)
-      redirect_to @artist
+      redirect_to artists_path
     else
       render :new
     end
@@ -25,13 +33,6 @@ class ArtistsController < ApplicationController
   def edit
   end
 
-  def update 
-    if @artist.update(artist_params)
-      redirect_to artists_path
-    else 
-      render :edit
-    end
-  end
 
   def destroy
     @artist.destroy

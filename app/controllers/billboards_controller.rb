@@ -21,7 +21,7 @@ class BillboardsController < ApplicationController
       render :edit
     end
   end
-  
+
   def new 
     @billboard = Billboard.new
   end
