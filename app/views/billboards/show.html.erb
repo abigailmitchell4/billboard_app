@@ -18,16 +18,18 @@
 </br>
  
 <div class="ui inverted segment">
-  <div class="ui inverted center aligned list">
+  <div class="ui inverted ordered center aligned list">
+  <ol>
    <% if @songs.any? %>
       <% @songs.each do |song| %>
-        <p><%= song.title %> - <%= song.artist_name %></p>
+        <li class="ui small inverted header"><%= song.title %> - <%= song.country %></p>
             <%= link_to 'Go To Song', artist_song_path(song.artist, song), class: "ui mini inverted button" %>
             <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete, class: "ui mini inverted button"%>
         <br/>
         <br/>
         <br/>
       <% end %>
+      </ol>
     </div>
   </div>
     <% else %>
