@@ -43,7 +43,7 @@ class BillboardsController < ApplicationController
   end
 
   def new_song
-    @songs = Song.all.where(billboard_id: nil)
+    @songs = Song.all.order(:title).where(billboard_id: nil)
   end
 
   def add_song
