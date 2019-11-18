@@ -22,9 +22,9 @@
   <ol>
    <% if @songs.any? %>
       <% @songs.each do |song| %>
-        <li class="ui small inverted header"><%= song.title %> - <%= song.country %></p>
-            <%= link_to 'Go To Song', artist_song_path(song.artist, song), class: "ui mini inverted button" %>
-            <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete, class: "ui mini inverted button"%>
+        <li class="ui medium inverted header"><%= song.title %> - <%= song.country %></p>
+            <%= link_to 'Go To Song', artist_song_path(song.artist, song), class: "ui mini left attached inverted button" %>
+            <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete, class: "ui mini right attached inverted button"%>
         <br/>
         <br/>
         <br/>
