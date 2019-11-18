@@ -1,6 +1,6 @@
 <h1>Edit Song</h1>
 
 <%= render "form", song: @song%>
-
-<%= link_to "Back", artist_songs_path %>
-<%= link_to "Show", artist_path(@artist) %>
+<br/>
+<%= link_to "Back", artist_songs_path, class: "ui black button" %>
+<%= link_to "Show", artist_path(@artist), class: "ui black button"%>

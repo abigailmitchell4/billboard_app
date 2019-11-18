@@ -2,13 +2,17 @@
 <br/>
   <h1 class="ui huge header">B I L L B O A R D S</h1>
 </div>
-<br/>
+
 <div class="ui center aligned header">
-  <button class="ui mini pink button">
-    <%= link_to "New billboard", new_billboard_path, class: "ui pink button" %>
-  </button>
+  <h1 class="ui medium header">Choose a Billboard Below</p>
 </div>
 
+<br/>
+<div class="ui center aligned header">
+  <%= link_to "New billboard", new_billboard_path, class: "ui color3 button" %>
+</div>
+
+<br/>
 <br/>
 <hr/>
 <br/>
@@ -29,10 +33,10 @@
         <div class="content">
           <div class="ui small vertical two buttons">
             <button class="ui basic button">
-              <%= link_to 'Edit', edit_billboard_path(billboard), class: "ui inverted violet button" %>
+              <%= link_to 'Edit', edit_billboard_path(billboard), class: "ui color7 button" %>
             </button>
             <button class="ui basic button">
-              <%= link_to 'Delete', billboard, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui inverted purple button" %>
+              <%= link_to 'Delete', billboard, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui color6 button" %>
             </button>
           </div>
         </div>

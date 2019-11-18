@@ -1,26 +1,17 @@
-<div class="ui center aligned header">
+<div class="ui center aligned color8 header">
 <br/>
-  <h1 class="ui medium header">You Chose: </h1>
-  <br/>
-  <h1 class="ui huge header">
+  <h1 class="ui huge color8 header">
   <%= @artist.name %></h1>
 <br/>
 </div>
 <div class="ui inverted center aligned segment">
-  <%# <div class="ui card"> %>
-  <%# <div class="ui center aligned segment"> %>
+<br/>
   <div class="content">
-    <div class="ui inverted center aligned header">
-      <div class="ui two buttons">
-        <button class="ui basic button">
-          <%=link_to 'View Songs', artist_songs_path(@artist), class: "ui huge inverted violet button" %>
-        </button>
-      </div>
-    <br/>
-  </br>
-  <%= link_to 'Edit', edit_artist_path(@artist), class: "ui inverted red button" %>
-    
-  <%= link_to 'Back', artists_path, class: "ui inverted red button" %>
+      <%=link_to 'View Songs', artist_songs_path(@artist), class: "ui huge inverted button" %>
+  <br/>
+  <br/>
+  <%= link_to 'Edit', edit_artist_path(@artist), class: "ui small inverted button" %>  
+  <%= link_to 'Back', artists_path, class: "ui small inverted button" %>
   </div>
-  </div>
+  <br/>
 </div>

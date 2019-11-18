@@ -8,10 +8,74 @@
 //   width: fit-content;
 // }
 
-.content {
-  align-content: center;
+.ui.spaced.header {
+  padding: 0 7px;
 }
 .ui.color3.button {
   background-color: #EA7171;
   color: #fff;
 }
+.ui.color3.button:hover {
+  background-color: #fff;
+  color: #EA7171;
+}
+
+.ui.colorpink:hover {
+  color: #EA7171;
+}
+
+
+.ui.color4.button {
+  background-color: #fff;
+  color: #EA7171;
+}
+
+.ui.color4 {
+  background-color: #fff;
+  color: #EA7171;
+}
+
+.ui.color5.button {
+  background-color: #7181ea;
+  color: #fff;
+}
+.ui.color5.button:hover {
+  background-color: #fff;
+  color: #7181ea;
+}
+
+.ui.color6.button {
+  background-color: #b5cc18;
+  color: #b30000;
+}
+.ui.color6.button:hover {
+  background-color: #fff;
+  color:#b30000;
+}
+
+.ui.color6.item:hover {
+  color: #b5cc18;
+}
+
+.ui.color7.button {
+  background-color:#00b5ad;
+  color: #fff;
+}
+.ui.color7.button:hover {
+  background-color: #fff;
+  color:#00b5ad;
+}
+
+.ui.color8 {
+  color: #3c31ff;
+  background-color: #ffb64e;
+}
+
+.ui.list.item{
+  color:  #fff;
+}
+
+.ui.list.item:hover{
+  color:  #EA7171;
+}
+

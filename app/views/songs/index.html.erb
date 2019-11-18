@@ -1,5 +1,6 @@
 <div class="ui center aligned header">
-  <h1>Songs by: <%=@artist.name%></h1>
+  <h3>SONGS BY:</h3>
+  <h1 class="ui large header"><%=@artist.name%></h1>
   <div class="ui small two buttons">
     <button class="ui basic button">
       <%= link_to 'Create a New Song', new_artist_song_path(@artist), class: "ui inverted left floated color3 button" %>
@@ -15,11 +16,10 @@
   <div class="ui inverted big relaxed divided list">
     <% @songs.each do |song| %>
     <div class="item">
-      <%# <div class="header"> %>
       </br>
-        <%= link_to song.title, artist_song_path(@artist, song)%>
-        <% end %>
-      <%# </div> %>
+       <a class="item"> <%= link_to song.title, artist_song_path(@artist, song), class: "ui list item"%>
+        <% end %> </a>
+      </div>
     </div>
   </div>
   </br>

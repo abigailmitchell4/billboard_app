@@ -1,35 +1,42 @@
-<div class="ui card">
-  <%#maybe image here %>
-  <div class="content">
-    <p class="header">
+<div class="ui center aligned header">
+<br/>
+  <h1 class="ui huge header">
       <%= @billboard.name %>
-    </p>
-    <div class="card-action"> 
-    <%= link_to 'Add Song', new_billboard_song_path(@billboard) %>
-    <br/>
-    <br/>
-  </div>
-    <% if @songs.any? %>
-      <% @songs.each do |song| %>
-        <p><%= song.title %></p>
-         <div class="card-action">
-            <%= link_to 'Go To Song', artist_song_path(song.artist, song) %>
-            <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete %>
-          </div>
-      <% end %>
-      <% else %>
-    <div class="center-align" >
-  <h3>No Songs On Billboard </h3>
-  </div>
-<% end %>
-    </p>
-  </div> 
-
   <br/>
+</div>
 
-
-  <div class="extra content">
-    <%= link_to 'Edit', edit_billboard_path(@billboard) %> |
-    <%= link_to 'Back', billboards_path %>
+<div class="content">
+  <div class="ui two buttons">
+    <button class="ui basic button">
+      <%= link_to 'Add Song', new_billboard_song_path(@billboard), class: "ui inverted left floated color3 button" %>
+    </button>
+    <button class="ui basic button">
+      <%= link_to 'Back to Billboards', billboards_path, class: "ui inverted right floated color3 button" %> 
+    </button>
   </div>
 </div>
+</br>
+ 
+<div class="ui inverted segment">
+  <div class="ui inverted center aligned list">
+   <% if @songs.any? %>
+      <% @songs.each do |song| %>
+        <p><%= song.title %> - <%= song.artist_name %></p>
+            <%= link_to 'Go To Song', artist_song_path(song.artist, song), class: "ui mini inverted button" %>
+            <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete, class: "ui mini inverted button"%>
+        <br/>
+        <br/>
+        <br/>
+      <% end %>
+    </div>
+  </div>
+    <% else %>
+  <div class="center-align" >
+    <h2>No Songs On Billboard </h2>
+  </div>
+<% end %>
+</div> 
+<br/>
+
+
+

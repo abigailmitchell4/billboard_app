@@ -1,19 +1,20 @@
-<div>
+<div class="ui center aligned header">
   <h1><%= @song.title %></h1>
-  <p>Artist: <%= @song.artist_name %></p>
-  <p>Album: <%= @song.album%></p>
-  <p>Rating: <%=@song.rating%></p>
-  <p>Country: <%=@song.country%></p>
-  <br/>
+  <div class="ui inverted segment">
+  <p>ARTIST: <span class="ui inverted spaced medium header"><%= @song.artist_name %></span></p>
+  <p>ALBUM: <span class="ui inverted spaced medium header"><%= @song.album%></span></p>
+  <p>RATING: <span class="ui inverted spaced medium header"> <%=@song.rating%></span></p>
+  <p>COUNTRY: <span class="ui inverted spaced medium header"> <%=@song.country%></span></p>
+  </div>
   <%# <h2>Comments</h2> %>
 </div>
-<hr />
+<br/>
 
-<div>
-  <%= link_to 'Edit song', edit_artist_song_path([@artist, @song]) %>
+<div class="ui three buttons">
+  <%= link_to 'Edit song', edit_artist_song_path([@artist, @song]), class: "ui color3 button" %>
   <br/>
-  <%= link_to 'Delete song', [@artist, @song], method: :delete %>
+  <%= link_to 'Delete song', [@artist, @song], method: :delete, class: "ui color3 button" %>
   <br/>
-  <%= link_to 'Back To All songs', artist_songs_path%>
+  <%= link_to 'Back To All songs', artist_songs_path, class: "ui color3 button"%>
   <br/>
 </div>

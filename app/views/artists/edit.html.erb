@@ -2,5 +2,8 @@
 
 <%= render "form", artist: @artist%>
 
-<%= link_to "Back", artists_path %>
-<%= link_to "Show", artist_path(@artist) %>
+<br/>
+<br/>
+
+<%= link_to "Back", artists_path, class: "ui black button" %>
+<%= link_to "Show", artist_path(@artist), class: "ui black button" %>

@@ -9,11 +9,9 @@
 
 <br/>
 <div class="ui center aligned header">
-  <button class="ui mini pink button">
-    <%= link_to "Add a New Artist", new_artist_path, class: "ui pink button" %>
-  </button>
+  <%= link_to "Add a New Artist", new_artist_path, class: "ui color3 button" %>
 </div>
-  
+<br/>
 <br/>
 <hr/>
 <br/>
@@ -34,10 +32,10 @@
       <div class="content">
         <div class="ui small vertical two buttons">
           <button class="ui basic button">
-            <%= link_to 'Edit', edit_artist_path(artist), class: "ui inverted violet button"%>
+            <%= link_to 'Edit', edit_artist_path(artist), class: "ui color5 button"%>
           </button>
           <button class="ui basic button">
-            <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui inverted purple button" %>
+            <%= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "ui color6 button" %>
           </button>
         </div>
       </div>

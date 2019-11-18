@@ -1,6 +1,8 @@
-<h1>Edit billboard</h1>
+<h1 class="ui header">Edit <%=@billboard.name%></h1>
 
 <%= render "form", billboard: @billboard%>
 
-<%= link_to "Back", billboards_path %>
-<%= link_to "Show", billboard_path(@billboard) %>
+<br/>
+
+<%= link_to "Back", billboards_path, class: "ui black button" %>
+<%= link_to "Show Billboard", billboard_path(@billboard), class: "ui black button" %>

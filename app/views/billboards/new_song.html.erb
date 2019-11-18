@@ -1,11 +1,13 @@
 <h1 class="ui header">Add A Song To: '<%= @billboard.name %>'</h1>	
 <div class="container">
-  
+<div class="ui inverted segment">
+  <div class="ui inverted center aligned list">
     <% @songs.each do |song| %>
-      <%= link_to song.title, add_billboard_song_path(@billboard, song), method: :post %>
+      <%= link_to song.title, add_billboard_song_path(@billboard, song), method: :post, class:"ui inverted spaced medium header colorpink" %>
     <br/>
   <% end %>
   </div>
-
+</div>
+</div>
 </br>
-<%= link_to 'Back', billboards_path, class: 'ui button' %>
+<%= link_to 'Back', billboards_path, class: 'ui color6 button' %>
